@@ -26,16 +26,24 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   <div class="w3-content">
     <div class="w3-twothird">
       <h1>Project Update 1 (Due Nov 4)</h1>
-      <h5 class="w3-padding-32"><b>Popular Codecs</b>: The popular codecs in virtual reality videos are currently the same as normal videos. H.264, MPEG-4, and H.265 are the most common choices.
+    <h5 class="w3-padding-32"><b>Popular Codecs</b>: The popular codecs in virtual reality videos are currently the same as normal videos. H.264, MPEG-4, and H.265 are the most common choices.
 								These codecs are well known, well tested, and widely supported. They provide an assortment of different profiles which allows the video encoding and compression to be tailored to the devices it is going to be played on.</h5>
 	  <h5 class="w3-padding-32"><b>H.264 Profile</b>: Chris Milk from VRSE was one of the more well established VR filmmakers in 2015 and inspecting some of his videos reveals the H.264 Baseline profile at level 4.2.
 								This results in a 3840x2160 display resolution at 30 frames per second which comes out to 20-30Mbps. Each device supports up to a certain H.264 level with newer devices supporting higher levels. 
-								This example was from 2015 so today's devices should be able to support much higher levels and even H.265.</h5>
-	  <h5 class="w3-padding-32"><b>Still Image Trick</b>: One very clever and powerful trick shown in this <a href="https://headjack.io/blog/best-encoding-settings-resolution-for-4k-360-3d-vr-videos/" target="_blank">blog post</a> is to have the top and bottom of the video be still images.
+                This example was from 2015 so today's devices should be able to support much higher levels and even H.265.</h5>
+    <h5 class="w3-padding-32"><b>H.265</b>: This codec is the successor to H.264 and offers similar quality at around half the bitrate or double the quality at the same bitrate. It's newer than H.264 so it doesn't have as much support and hasn't been tested as thoroughly, but both of these factors are becoming less true each year.</h5>
+
+    <h3>Optimizations</h4>
+
+    <h5 class="w3-padding-32"><b>Still Image Trick</b>: One very clever and powerful trick shown in this <a href="https://headjack.io/blog/best-encoding-settings-resolution-for-4k-360-3d-vr-videos/" target="_blank">blog post</a> is to have the top and bottom of the video be still images.
 								VR demands much higher resolutions than traditional video playback, but devices such as smartphones don't necessarily have the computing power available to handle those resolutions.
 								Imagine a video that has a resolution of 3840x3840. In most cases, the objects most important to the scene will be found at mid-height (for example, the 3840x1536 middle portion of the scene). 
-								This means that instead of using video, we can use a still image for the top and bottom of the scene (both 3840x1152). This trick will allow the user to experience a 3840x3840 resolution scene while their device only needs to decode a 3840x1536 video.</h5>
-	  <h5 class="w3-padding-32"><b>H.265</b>: This codec is the successor to H.264 and offers similar quality at around half the bitrate or double the quality at the same bitrate. It's newer than H.264 so it doesn't have as much support and hasn't been tested as thoroughly, but both of these factors are becoming less true each year.</h5>
+                This means that instead of using video, we can use a still image for the top and bottom of the scene (both 3840x1152). This trick will allow the user to experience a 3840x3840 resolution scene while their device only needs to decode a 3840x1536 video.</h5>
+    <h5 class="w3-padding-32"><b>Spherical Wavelets</b>: The majority of video encoding algorithms operate on 2D planes in order to compress and produce a 2D picture. However, VR uses interactive input from the user in the 3D plane as input into the VR system,
+                which is then compressed and projected back onto a simulated 3D video plane for viewing. In order for information to be effictiently compressed in this manner, the most commonly used method converts the inputted data into 2D rectangular wavelets
+                and projects the wavelets onto a 3D sphere. This is known as a reverse equirectangular projection.</h5> 
+    <h5 class="w3-padding-32"><b>Asynchronous Video Loading</b>: In VR, the most imperative system for good user experience is for head movements to match the video feed. Typically, VR systems will compress and project video as soon as sensored head movements complete calculations.
+                This is done in parallel to all other sensor calculations such as hand movements and buttons. Overall, this decreases the compression ratio, but will also decrease perceived latency.</h5>         
     </div>
 
     <div class="w3-third w3-center">
