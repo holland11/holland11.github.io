@@ -33,7 +33,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
                 This example was from 2015 so today's devices should be able to support much higher levels and even H.265.</h5>
     <h5 class="w3-padding-32"><b>H.265</b>: This codec is the successor to H.264 and offers similar quality at around half the bitrate or double the quality at the same bitrate. It's newer than H.264 so it doesn't have as much support and hasn't been tested as thoroughly, but both of these factors are becoming less true each year.</h5>
 
-    <h3>Optimizations</h4>
+    <h3>Optimizations</h3>
 
     <h5 class="w3-padding-32"><b>Still Image Trick</b>: One very clever and powerful trick shown in this <a href="https://headjack.io/blog/best-encoding-settings-resolution-for-4k-360-3d-vr-videos/" target="_blank">blog post</a> is to have the top and bottom of the video be still images.
 								VR demands much higher resolutions than traditional video playback, but devices such as smartphones don't necessarily have the computing power available to handle those resolutions.
@@ -44,6 +44,14 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
                 and projects the wavelets onto a 3D sphere. This is known as a reverse equirectangular projection.</h5> 
     <h5 class="w3-padding-32"><b>Asynchronous Video Loading</b>: In VR, the most imperative system for good user experience is for head movements to match the video feed. Typically, VR systems will compress and project video as soon as sensored head movements complete calculations.
                 This is done in parallel to all other sensor calculations such as hand movements and buttons. Overall, this decreases the compression ratio, but will also decrease perceived latency.</h5>         
+    </div>
+	
+	<h3>Schedule / Issues </h3>
+
+    <h5 class="w3-padding-32"><b>Schedule</b>: Our plan is still to continue finding more and more resources on the topic of VR and coding/compression and reading them while taking notes.</h5>
+    <h5 class="w3-padding-32"><b>Issues</b>: The main issue we've had so far is with finding papers and articles pertaining to what we are looking to learn. The original plan was to learn about compression and coding schemes used between rendering/generating a scene on a desktop PC and transmitting that information to the tethered headset.
+								Most of the papers and information that we've found while searching for variations of "compression in vr" have been in relation to 360 degree VR video being streamed to a smartphone. This is still a fascinating topic, but it seems that most video that falls under this category just uses fairly standard H.264 or H.265 codecs and profiles.
+								The papers then go into detail about complex theories that could be applied to reduce the bitrate while keeping the quality sufficiently high. A lot of the techniques being discussed in these papers are well above my level of understanding so it's hard to make sense of it or to be able to use it in our own report.</h5> 
     </div>
 
     <div class="w3-third w3-center">
